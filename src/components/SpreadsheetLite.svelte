@@ -69,7 +69,7 @@
       "px;top: " +
       selection.r * 24 +
       "px;width: " +
-      selectionSize().w +
+      (selectionSize().w) +
       "px"
     );
   };
@@ -99,7 +99,7 @@
   let headerResizeMove = e => {
     e.preventDefault();
     var headerRect = e.target.parentNode.parentNode.getBoundingClientRect();
-    var headerMouseX = e.clientX - headerRect.left;
+    var headerMouseX = e.clientX - headerRect.left+25;
     if (headerResizeAt >= 0) {
       const updateWidth = headerMouseX - positionLeft(headerResizeAt);
       header[headerResizeAt].width = updateWidth > 30 ? updateWidth : 30;
@@ -371,10 +371,10 @@
 <template>
   <div
     on:mouseup={onMouseUpSvg}
-    on:mousemove={headerResizeMove}
+    on:mousemove={(e) => {headerResizeMove(e)}}
     class="grid"
     bind:this={el}>
-    <svg width={positionLeft(data.length + 1) + 1} height="24">
+    <svg width={positionLeft(data.length + 1) + 50} height="24">
       {#each header as col, ci}
         <g
           key={ci}
@@ -399,15 +399,15 @@
             text-anchor="middle"
             x={col.width / 2}
             y="12"
-            width={col.width}
+            width={col.width-5}
             height={rowHeight}>
             {col.name}
           </text>
           <rect
             class={'col-header__resize' + (ci === headerResizeAt ? 'active' : '')}
-            x={col.width - 5}
+            x={col.width -10}
             y="0"
-            width="5"
+            width="10"
             height={rowHeight}
             on:mousedown={() => {
               headerResizeStart(ci);
