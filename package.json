@@ -1,27 +1,41 @@
 {
-  "name": "svelte-app",
+  "name": "svelte-spreadsheet-lite",
   "version": "1.0.0",
+  "description": "Spreadsheet compoment for svelte",
+  "author": "Antoine Renciot",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public"
   },
   "devDependencies": {
-    "@rollup/plugin-alias": "^3.1.1",
+    "@rollup/plugin-alias": "^3.1.2",
     "@rollup/plugin-commonjs": "^12.0.0",
-    "@rollup/plugin-node-resolve": "^8.0.0",
-    "bootstrap": "^4.5.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
     "node-sass": "^4.14.1",
-    "rollup": "^2.3.4",
+    "rollup": "^2.39.0",
     "rollup-plugin-alias": "^2.2.0",
     "rollup-plugin-livereload": "^1.0.0",
-    "rollup-plugin-postcss": "^3.1.2",
+    "rollup-plugin-postcss": "^3.1.8",
     "rollup-plugin-svelte": "^5.0.3",
-    "rollup-plugin-terser": "^5.1.2",
-    "svelte": "^3.0.0",
-    "svelte-preprocess": "^3.9.8"
+    "rollup-plugin-terser": "^5.3.1",
+    "svelte": "^3.32.3"
   },
   "dependencies": {
-    "sirv-cli": "^0.4.4"
-  }
+    "sirv-cli": "^0.4.4",
+    "svelte-preprocess": "^4.6.9"
+  },
+  "main": "rollup.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rimuruu/svelte-spreadsheet-lite.git"
+  },
+  "keywords": [
+    "spreadsheet"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rimuruu/svelte-spreadsheet-lite/issues"
+  },
+  "homepage": "https://github.com/Rimuruu/svelte-spreadsheet-lite#readme"
 }

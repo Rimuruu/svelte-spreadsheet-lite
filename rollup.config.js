@@ -4,8 +4,8 @@ import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 
-import alias from '@rollup/plugin-alias';
 import autoPreprocess from 'svelte-preprocess';
+import alias from '@rollup/plugin-alias';
 import postcss from 'rollup-plugin-postcss';
 const production = !process.env.ROLLUP_WATCH;
 
@@ -26,14 +26,8 @@ export default {
 			css: css => {
 				css.write('public/build/bundle.css');
 			},
-			preprocess: autoPreprocess({   
-				scss: {
-				  includePaths: [
-					  'node_modules',
-					  'src'
-				  ]
-				},
-			  }),
+			preprocess: autoPreprocess(),
+	
 
 		}),
 
@@ -44,7 +38,7 @@ export default {
 		// https://github.com/rollup/plugins/tree/master/packages/commonjs
 		resolve({
 			browser: true,
-			dedupe: ['svelte']
+		
 		}),
 		commonjs(),
 
