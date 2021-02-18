@@ -1,7 +1,7 @@
 #
 # Svelte spreadsheet-lite
 
-A spreadsheet component for svelte base on @anydown/vue-spreadsheet-lite.
+A spreadsheet component for svelte based on @anydown/vue-spreadsheet-lite.
 I did during my intership.
 
 ```
